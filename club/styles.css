@@ -75,8 +75,13 @@ header {
     fill: #ffc800;
 }
 
-.top-nav ul {
+.top-nav {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.top-nav ul {
+    display: inline-flex;
     margin-right: 0;
     align-items: center;
     justify-content: center;
@@ -105,6 +110,21 @@ header {
 
 .top-nav path {
     fill: #ffc800;
+}
+ 
+.hamburger {
+    display: none;
+    padding: 1rem;
+}
+
+.bar {
+    display: block;
+    width: 1.5rem;
+    height: .13rem;
+    margin: .375rem auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #ffc800;
 }
 
 /* hidden ====================================== */
@@ -332,6 +352,10 @@ header a:hover {
 }
 
 @media screen and (max-width: 540px) {
+    html {
+        font-size: 18px;
+    }
+
     h1 {
         font-size: 1.5rem;
     }
@@ -365,10 +389,15 @@ header a:hover {
         fill: #ffc800;
     }
 
-    .top-nav {
+    .top-nav ul{
         display: none;
     }
 
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    
     #hero .title {
         display: block;
         grid-column: 1 / 25;
